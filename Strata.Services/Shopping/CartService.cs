@@ -103,5 +103,76 @@ namespace Strata.Services.Shopping {
 
             this.DbContext.Carts.Remove(cart);
         }
+
+        public async Task<bool> TryAddItem(int itemId) {
+            var cart = await GetOrCreateCart();
+
+            var item = await this.DbContext.Items
+                .Where(x => x.Id == itemId)
+                .FirstOrDefaultAsync();
+
+            if (item == null) {
+                return false;
+            }
+
+            var cartItem = new CartItem {
+                CartId = cart.Id,
+                ItemId = item.Id
+            };
+
+            this.DbContext.CartItems.Add(cartItem);
+            await this.DbContext.SaveChangesAsync();
+            return true;
+        }
+
+        public async Task<bool> TryUpdateQuantity(int itemId, int newQuatity) {
+            var cart = await GetOrCreateCart();
+
+            var items = cart.Items.Select(x => x.Item);
+
+            if (!items.Any(x => x.Id == itemId)) {
+                return false;
+            }
+
+
+            //Remove all of the type and re add up to new quantity
+            var toRemove = cart.Items.Where(x => x.Item.Id == itemId);
+
+            foreach (var remove in toRemove) {
+                this.DbContext.CartItems.Remove(remove);
+            }
+
+            foreach (var count in Enumerable.Range(1, newQuatity)) {
+                var toAdd = new CartItem {
+                    CartId = cart.Id,
+                    ItemId = itemId
+                };
+                this.DbContext.CartItems.Add(toAdd);
+            }
+            await this.DbContext.SaveChangesAsync(); //Could be slow for a big change, improve by adding/removing difference
+            return true;
+        }
+
+        public async Task<bool> TryRemoveItem(int itemId) {
+            var cart = await GetOrCreateCart();
+
+            var items = cart.Items.Select(x => x.Item);
+
+            if (!items.Any(x => x.Id == itemId)) {
+                return false;
+            }
+
+
+            //Remove all of the type and re add up to new quantity
+            var toRemove = cart.Items.Where(x => x.Item.Id == itemId);
+
+            foreach (var remove in toRemove) {
+                this.DbContext.CartItems.Remove(remove);
+            }
+
+
+            await this.DbContext.SaveChangesAsync();
+            return true;
+        }
     }
 }

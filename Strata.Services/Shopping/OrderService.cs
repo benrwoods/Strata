@@ -19,9 +19,5 @@ namespace Strata.Services.Shopping {
             return this.DbContext.Orders
                 .Join(this.UserService.CurrentUserQuery, ok => ok.UserId, ik => ik.Id, (o, i) => o);
         }
-
-        public IQueryable<OrderItem> GetOrderItems() {
-            throw new System.NotImplementedException();
-        }
     }
 }

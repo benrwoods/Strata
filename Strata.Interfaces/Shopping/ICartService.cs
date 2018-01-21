@@ -7,5 +7,11 @@ namespace Strata.Interfaces.Shopping {
         Task<Cart> GetOrCreateCart();
 
         Task<bool> BuyCart();
+
+        Task<bool> TryAddItem(int itemId);
+
+        Task<bool> TryUpdateQuantity(int itemId, int newQuatity);
+
+        Task<bool> TryRemoveItem(int itemId);
     }
 }

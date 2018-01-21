@@ -1,5 +1,6 @@
 ﻿using Strata.API.Model.Shopping;
 using Strata.Data.Shopping;
+using System;
 using System.Linq;
 
 namespace Strata.API.Converter {
@@ -13,7 +14,7 @@ namespace Strata.API.Converter {
                     .Select(x => new ItemDTO {
                         Name = x.First().Name,
                         Quantity = x.Count(),
-                        Cost = x.First().Cost * x.Count()
+                        Cost = Math.Round(x.First().Cost * x.Count(), 2)
                     }),
                 DiscountPercent = cart.Discount
             };

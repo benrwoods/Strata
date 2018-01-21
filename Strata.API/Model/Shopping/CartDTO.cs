@@ -1,4 +1,5 @@
 ﻿using Strata.Utils;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -10,7 +11,7 @@ namespace Strata.API.Model.Shopping {
 
         public double TotalCost {
             get {
-                return CostUtil.ApplyDiscount(this.Items.Sum(x => x.Cost), this.DiscountPercent);
+                return Math.Round(CostUtil.ApplyDiscount(this.Items.Sum(x => x.Cost), this.DiscountPercent), 2);
             }
         }
     }

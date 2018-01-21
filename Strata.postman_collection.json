@@ -1,0 +1,525 @@
+{
+	"info": {
+		"name": "Strata",
+		"_postman_id": "332c302e-adcf-41d2-25dd-cfdd794c147d",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login standard",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "5790e65b-52a6-4416-a294-038b572a58ba",
+						"type": "text/javascript",
+						"exec": [
+							"if(responseCode.code === 200){",
+							"    var jsonData = JSON.parse(responseBody);",
+							"    postman.setGlobalVariable(\"authToken\",  jsonData.accessToken);",
+							"}"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"login\": \"standard\",\n\t\"password\": \"standard\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:56411/api/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "56411",
+					"path": [
+						"api",
+						"token"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Login gold",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "5790e65b-52a6-4416-a294-038b572a58ba",
+						"type": "text/javascript",
+						"exec": [
+							"if(responseCode.code === 200){",
+							"    var jsonData = JSON.parse(responseBody);",
+							"    postman.setGlobalVariable(\"authToken\",  jsonData.accessToken);",
+							"}"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"login\": \"gold\",\n\t\"password\": \"gold\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:56411/api/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "56411",
+					"path": [
+						"api",
+						"token"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get cart",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ea70c61b-d32c-4f65-b13b-59263b2adcfd",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{authToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"login\": \"standard\",\n\t\"password\": \"standard\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:56411/api/cart",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "56411",
+					"path": [
+						"api",
+						"cart"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Amend cart",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ea70c61b-d32c-4f65-b13b-59263b2adcfd",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{authToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"itemId\": 1,\n\t\"newQuantity\": 5\n}"
+				},
+				"url": {
+					"raw": "http://localhost:56411/api/cart/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "56411",
+					"path": [
+						"api",
+						"cart",
+						"update"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Remove from cart",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ea70c61b-d32c-4f65-b13b-59263b2adcfd",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{authToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"itemId\": 1\n}"
+				},
+				"url": {
+					"raw": "http://localhost:56411/api/cart/remove",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "56411",
+					"path": [
+						"api",
+						"cart",
+						"remove"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Add to cart",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ea70c61b-d32c-4f65-b13b-59263b2adcfd",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{authToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"itemId\": 1\n}"
+				},
+				"url": {
+					"raw": "http://localhost:56411/api/cart/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "56411",
+					"path": [
+						"api",
+						"cart",
+						"add"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Buy cart",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8a6e1b19-04bc-41ba-a986-2ff47c1a8f26",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{authToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"login\": \"standard\",\n\t\"password\": \"standard\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:56411/api/cart/buy",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "56411",
+					"path": [
+						"api",
+						"cart",
+						"buy"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get order",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8a6e1b19-04bc-41ba-a986-2ff47c1a8f26",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{authToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"login\": \"standard\",\n\t\"password\": \"standard\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:56411/api/orders/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "56411",
+					"path": [
+						"api",
+						"orders",
+						"1"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get orders in range",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8a6e1b19-04bc-41ba-a986-2ff47c1a8f26",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{authToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"login\": \"standard\",\n\t\"password\": \"standard\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:56411/api/orders/range/2000-01-01/2020-01-01",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "56411",
+					"path": [
+						"api",
+						"orders",
+						"range",
+						"2000-01-01",
+						"2020-01-01"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get pending orders",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8a6e1b19-04bc-41ba-a986-2ff47c1a8f26",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{authToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"login\": \"standard\",\n\t\"password\": \"standard\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:56411/api/orders/pending",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "56411",
+					"path": [
+						"api",
+						"orders",
+						"pending"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
