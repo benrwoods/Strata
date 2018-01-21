@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Strata.Utils", "Strata.Util
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Strata.Interfaces", "Strata.Interfaces\Strata.Interfaces.csproj", "{F19A7406-2881-4A9C-B19B-2FCF5CA8E4B9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Strata.API", "Strata.API2\Strata.API.csproj", "{94B263DA-0B8C-4335-B6A0-A7915ECE280F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Strata.API", "Strata.API\Strata.API.csproj", "{94B263DA-0B8C-4335-B6A0-A7915ECE280F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
