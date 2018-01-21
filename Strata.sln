@@ -3,7 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2024
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Strata", "Strata\Strata.csproj", "{0F627229-F539-4342-9328-4D9366EB37D1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Strata.API", "Strata\Strata.API.csproj", "{0F627229-F539-4342-9328-4D9366EB37D1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Strata.Data", "Strata.Data\Strata.Data.csproj", "{FF3E3C16-2CB6-462E-B471-C88C77D87A87}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Strata.Services", "Strata.Services\Strata.Services.csproj", "{6FA0DC0E-5AE9-450B-B03F-DDDA0A715ADE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Strata.Utils", "Strata.Utils\Strata.Utils.csproj", "{F3183F7D-56FB-46FA-9919-28037CDBBC90}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Strata.Interfaces", "Strata.Interfaces\Strata.Interfaces.csproj", "{F19A7406-2881-4A9C-B19B-2FCF5CA8E4B9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +23,22 @@ Global
 		{0F627229-F539-4342-9328-4D9366EB37D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0F627229-F539-4342-9328-4D9366EB37D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0F627229-F539-4342-9328-4D9366EB37D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF3E3C16-2CB6-462E-B471-C88C77D87A87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF3E3C16-2CB6-462E-B471-C88C77D87A87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF3E3C16-2CB6-462E-B471-C88C77D87A87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF3E3C16-2CB6-462E-B471-C88C77D87A87}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6FA0DC0E-5AE9-450B-B03F-DDDA0A715ADE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FA0DC0E-5AE9-450B-B03F-DDDA0A715ADE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FA0DC0E-5AE9-450B-B03F-DDDA0A715ADE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FA0DC0E-5AE9-450B-B03F-DDDA0A715ADE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3183F7D-56FB-46FA-9919-28037CDBBC90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3183F7D-56FB-46FA-9919-28037CDBBC90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3183F7D-56FB-46FA-9919-28037CDBBC90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3183F7D-56FB-46FA-9919-28037CDBBC90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F19A7406-2881-4A9C-B19B-2FCF5CA8E4B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F19A7406-2881-4A9C-B19B-2FCF5CA8E4B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F19A7406-2881-4A9C-B19B-2FCF5CA8E4B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F19A7406-2881-4A9C-B19B-2FCF5CA8E4B9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
