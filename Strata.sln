@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2024
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Strata", "Strata\Strata.csproj", "{0F627229-F539-4342-9328-4D9366EB37D1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0F627229-F539-4342-9328-4D9366EB37D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F627229-F539-4342-9328-4D9366EB37D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F627229-F539-4342-9328-4D9366EB37D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F627229-F539-4342-9328-4D9366EB37D1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {59F5A45C-4E94-4838-BFB5-E59B4B7975D7}
+	EndGlobalSection
+EndGlobal
