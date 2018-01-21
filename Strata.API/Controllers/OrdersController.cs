@@ -50,5 +50,26 @@ namespace Strata.API.Controllers {
 
             return Ok(orders.Select(x => x.ToDTOList()));
         }
+
+        [HttpGet("range/{from}/{to}")]
+        [ProducesResponseType(typeof(IEnumerable<OrderDTO>), 200)]
+        [ProducesResponseType(204)]
+        [ProducesResponseType(400)]
+        public async Task<IActionResult> GetOrdersInRange(DateTime from, DateTime to) {
+            if (from > to) {
+                return BadRequest("Invalid date range");
+            }
+
+            var orders = await this.OrderService.GetOrders()
+                .Where(x => x.OrderDate > from)
+                .Where(x => x.OrderDate < to)
+                .ToListAsync();
+
+            if (orders == null || !orders.Any()) {
+                return NoContent();
+            }
+
+            return Ok(orders.Select(x => x.ToDTOList()));
+        }
     }
 }
